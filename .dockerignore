@@ -1,4 +1,6 @@
 # General
+.idea
+.gradle
 
 # Backend 
 server/build/libs

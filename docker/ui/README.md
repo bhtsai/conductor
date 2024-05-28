@@ -1,13 +1,15 @@
 # Docker
 ## Conductor UI
-This Dockerfile create the conductor:ui image
+This Dockerfile creates the conductor-ui image
 
 ## Building the image
 
 Run the following commands from the project root.
 
-`docker build -f docker/ui/Dockerfile -t conductor:ui .`
+`docker build -f docker/ui/Dockerfile-Ui -t conductor-ui:{tag} .`
 
 ## Running the conductor server
- - With localhost conductor server: `docker run -p 5000:5000 -d -t conductor:ui`
- - With external conductor server: `docker run -p 5000:5000 -d -t -e "WF_SERVER=http://conductor-server:8080" conductor:ui`
+
+- use `WF_SERVER` to connect with specific conductor server (default http://localhost:8080)
+
+`docker run -it -p 5000:5000 -e "WF_SERVER=http://conductor-server:8080" conductor-ui:{tag}`
